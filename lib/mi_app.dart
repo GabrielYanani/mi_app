@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class MiApp1 extends StatefulWidget {
@@ -12,35 +10,21 @@ class MiApp1 extends StatefulWidget {
 }
 
 class _MiApp1State extends State<MiApp1> {
-  // List misFotos=[ Image miFoto = Image.asset('assets/januka.jpg',),
-  // Image miPrimeraFoto = Image.asset('assets/jaim.jpg'),
-  // Image miSegundaFoto = Image.asset('assets/tobe.jpg'),];
-  Image miFoto = Image.asset('assets/januka.jpg',);
+  // List misFotos=[Image.asset('assets/januka.jpg'),
+  // Image.asset('assets/jaim.jpg'),
+  // Image.asset('assets/tobe.jpg'),];
+  Image miFoto = Image.asset('assets/januka.jpg');
   Image miPrimeraFoto = Image.asset('assets/jaim.jpg');
   Image miSegundaFoto = Image.asset('assets/tobe.jpg');
-// child: new ListView(
-//           children: [
-//             Image.asset('images/carimg.jpeg',  
-//               width: 600.0,
-//               height: 240.0,
-//               fit: BoxFit.cover,),
-//             Image.asset('images/carimg.jpeg',  
-//               width: 600.0,
-//               height: 240.0,
-//               fit: BoxFit.cover,),
-//             Image.asset('images/carimg.jpeg',  
-//               width: 600.0,
-//               height: 240.0,
-//               fit: BoxFit.cover,),
-//             Image.asset('images/carimg.jpeg',  
-//               width: 600.0,
-//               height: 240.0,
-//               fit: BoxFit.cover,)
-//           ],
+
+  String text1 = 'Asi festejamos en casa!';
+  String text2 = 'Hola! me llamo Jaim';
+
   get child => null;
 
-  void _mostrarFoto() {
+  void _cambiarFotoTexto() {
     setState(() {
+      text1 = text2;
       miFoto = miPrimeraFoto;
     });
   }
@@ -64,31 +48,25 @@ class _MiApp1State extends State<MiApp1> {
           children: <Widget>[
             Container(
               color: Colors.blue,
-              // child: Text(
-              //   'חנוכה שמח!!',
-              //   textDirection: TextDirection.rtl,
-              //   style: TextStyle(
-              //       fontSize: 70,
-              //       decoration: TextDecoration.underline,
-              //       fontStyle: FontStyle.italic),
-              // ),
             ),
             Text(
-              'Asi festejamos en casa!',
+              text1,
               style: TextStyle(
                 fontSize: 40,
                 color: Colors.white,
+                fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
             ),
             Expanded(
+              // child: ListView=ListView('assets/misFotos'),
               child: miFoto,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _mostrarFoto,
+        onPressed: _cambiarFotoTexto,
         tooltip: 'CAmbiarFoto',
         child: const Icon(Icons.photo),
         backgroundColor: Colors.amber,
