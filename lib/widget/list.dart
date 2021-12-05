@@ -2,9 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class list extends StatelessWidget {
-  list({Key key}) : super(key: key);
+class MiLista extends StatefulWidget {
+  MiLista({Key key}) : super(key: key);
 
+  @override
+  State<MiLista> createState() => _MiListaState();
+}
+
+class _MiListaState extends State<MiLista> {
   List<Image> misFotos = [
     Image.asset('assets/januka.jpg'),
     Image.asset('assets/jaim.jpg'),
@@ -13,9 +18,15 @@ class list extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: misFotos.map((Image image) => Container(height: 100,width: 200,),).toList(),
-    );
+    return Scaffold(
+        body: ListView(
+      padding: EdgeInsets.all(20),
+      children: misFotos
+          .map(
+            (Image image) => image,
+          )
+          .toList(),
+    ));
   }
 }
   
