@@ -10,25 +10,45 @@ class MiApp1 extends StatefulWidget {
 }
 
 class _MiApp1State extends State<MiApp1> {
-  // List misFotos=[Image.asset('assets/januka.jpg'),
-  // Image.asset('assets/jaim.jpg'),
-  // Image.asset('assets/tobe.jpg'),];
-  Image miFoto = Image.asset('assets/januka.jpg');
-  Image miPrimeraFoto = Image.asset('assets/jaim.jpg');
-  Image miSegundaFoto = Image.asset('assets/tobe.jpg');
+  List<Image> misFotos = [
+    Image.asset('assets/januka.jpg'),
+    Image.asset('assets/jaim.jpg'),
+    Image.asset('assets/tobe.jpg'),
+    Image.asset('assets/ezra.jpg'),
+  ];
 
-  String text1 = 'Asi festejamos en casa!';
-  String text2 = 'Hola! me llamo Jaim';
+  List<String> misTextos = [
+    'Asi festejamos en casa',
+    'hola! me llamo Jaim',
+    'Hola! yo soy Tobe',
+    'Hola! yo me llamo Ezra!!',
+  ];
+  // _cambios()  
+  // {
+  //   for (Image foto in misFotos) {
+  //     foto;
+  //   }
+  //   for (var texto in misTextos) {
+  //     return texto;
+  //   }
+  // }
+  // Image miFoto = Image.asset('assets/januka.jpg');
+  // Image miPrimeraFoto = Image.asset('assets/jaim.jpg');
+  // Image miSegundaFoto = Image.asset('assets/tobe.jpg');
+
+  // String text1 = 'Asi festejamos en casa!';
+  // String text2 = 'Hola! me llamo Jaim';
 
   get child => null;
 
-  void _cambiarFotoTexto() {
+  _cambiarFotoTexto() {
     setState(() {
-      text1 = text2;
-      miFoto = miPrimeraFoto;
+      // _cambios();
     });
   }
 
+// text1 = text2;
+  // miFoto = miPrimeraFoto;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,28 +62,23 @@ class _MiApp1State extends State<MiApp1> {
         centerTitle: true,
       ),
       backgroundColor: Colors.cyan,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Container(
-              color: Colors.blue,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            misTextos[0],
+            style: TextStyle(
+              fontSize: 40,
+              color: Colors.white,
+              fontStyle: FontStyle.italic,
             ),
-            Text(
-              text1,
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-                fontStyle: FontStyle.italic,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            Expanded(
-              // child: ListView=ListView('assets/misFotos'),
-              child: miFoto,
-            ),
-          ],
-        ),
+            textAlign: TextAlign.center,
+          ),
+          Expanded(
+            // child: ListView=ListView('assets/misFotos'),
+            child: misFotos[0],
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _cambiarFotoTexto,
