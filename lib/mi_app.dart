@@ -23,7 +23,7 @@ class _MiApp1State extends State<MiApp1> {
     'Hola! yo soy Tobe',
     'Hola! yo me llamo Ezra!!',
   ];
-  // _cambios()  
+  // _cambios()
   // {
   //   for (Image foto in misFotos) {
   //     foto;
@@ -40,9 +40,23 @@ class _MiApp1State extends State<MiApp1> {
   // String text2 = 'Hola! me llamo Jaim';
 
   get child => null;
+  int y = 0;
+  int i = 0;
 
   _cambiarFotoTexto() {
     setState(() {
+      if (y < misTextos.length) {
+        (misFotos[y]);
+        y++;
+        if (y == misTextos.length) y = 0;
+      }
+
+      if (i < misFotos.length) {
+        (misFotos[i]);
+        i++;
+        if (i == misFotos.length) i = 0;
+      }
+
       // _cambios();
     });
   }
@@ -66,7 +80,7 @@ class _MiApp1State extends State<MiApp1> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            misTextos[0],
+            misTextos[y],
             style: TextStyle(
               fontSize: 40,
               color: Colors.white,
@@ -76,7 +90,7 @@ class _MiApp1State extends State<MiApp1> {
           ),
           Expanded(
             // child: ListView=ListView('assets/misFotos'),
-            child: misFotos[0],
+            child: misFotos[i],
           ),
         ],
       ),
