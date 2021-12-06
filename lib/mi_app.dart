@@ -96,7 +96,7 @@ class _MiApp1State extends State<MiApp1> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _cambiarFotoTexto,
-        tooltip: 'CAmbiarFoto',
+        tooltip: 'CmbiarFotoTexto',
         child: const Icon(Icons.photo),
         backgroundColor: Colors.amber,
       ),
