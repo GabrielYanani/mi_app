@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:mi_app/pagina_1.dart';
 
 class MiApp1 extends StatefulWidget {
   const MiApp1({Key key}) : super(key: key);
@@ -94,7 +95,7 @@ class _MiApp1State extends State<MiApp1> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>MiApp1(),
+                      builder: (context) =>MiApp2(),
                     ),);
               },
               tooltip: 'cambio de pagina',

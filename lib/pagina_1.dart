@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class MiApp1 extends StatefulWidget {
-  const MiApp1({Key key}) : super(key: key);
+class MiApp2 extends StatefulWidget {
+  const MiApp2({Key key}) : super(key: key);
 
   @override
-  State<MiApp1> createState() => _MiApp1State();
+  State<MiApp2> createState() => _MiApp2State();
 }
 
-class _MiApp1State extends State<MiApp1> {
+class _MiApp2State extends State<MiApp2> {
   List<dynamic> misFotos = [
     Image.asset('assets/januka.jpg'),
     Image.asset('assets/jaim.jpg'),
