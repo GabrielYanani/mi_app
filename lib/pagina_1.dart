@@ -78,23 +78,12 @@ class _MiApp1State extends State<MiApp1> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton:Row(children: [FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _cambiarFotoTexto,
         tooltip: 'CmbiarFotoTexto',
-        child: const Icon(
-          Icons.photo,
-          size: 30,
-        ),
+        child: const Icon(Icons.photo),
         backgroundColor: Colors.amber,
-      ),FloatingActionButton(
-        onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>pagina_1()))},
-        tooltip: 'CmbiarFotoTexto',
-        child: const Icon(
-          Icons.photo,
-          size: 30,
-        ),
-        backgroundColor: Colors.amber,
-      ),],) 
+      ),
     );
   }
 }
