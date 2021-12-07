@@ -23,23 +23,6 @@ class _MiApp1State extends State<MiApp1> {
     'Hola! yo soy Tobe',
     'Hola! yo me llamo Ezra!!',
   ];
-  // _cambios()
-  // {
-  //   for (Image foto in misFotos) {
-  //     foto;
-  //   }
-  //   for (var texto in misTextos) {
-  //     return texto;
-  //   }
-  // }
-  // Image miFoto = Image.asset('assets/januka.jpg');
-  // Image miPrimeraFoto = Image.asset('assets/jaim.jpg');
-  // Image miSegundaFoto = Image.asset('assets/tobe.jpg');
-
-  // String text1 = 'Asi festejamos en casa!';
-  // String text2 = 'Hola! me llamo Jaim';
-
-  get child => null;
   int y = 0;
   int i = 0;
 
@@ -56,13 +39,9 @@ class _MiApp1State extends State<MiApp1> {
         i++;
         if (i == misFotos.length) i = 0;
       }
-
-      // _cambios();
     });
   }
 
-// text1 = text2;
-  // miFoto = miPrimeraFoto;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +68,6 @@ class _MiApp1State extends State<MiApp1> {
             textAlign: TextAlign.center,
           ),
           Expanded(
-            // child: ListView=ListView('assets/misFotos'),
             child: misFotos[i],
           ),
         ],
