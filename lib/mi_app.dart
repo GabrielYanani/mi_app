@@ -10,34 +10,37 @@ class MiApp1 extends StatefulWidget {
 }
 
 class _MiApp1State extends State<MiApp1> {
-  List<Image> misFotos = [
-    Image.asset('assets/januka.jpg'),
+  List<dynamic> misFotos = [
+    Image.asset(
+      'assets/januka.jpg',
+    ),
     Image.asset('assets/jaim.jpg'),
     Image.asset('assets/tobe.jpg'),
     Image.asset('assets/ezra.jpg'),
   ];
 
   List<String> misTextos = [
-    'Asi festejamos en casa',
+    'Asi es nuestra Januka',
     'hola! me llamo Jaim',
     'Hola! yo soy Tobe',
     'Hola! yo me llamo Ezra!!',
   ];
-  int y = 0;
-  int i = 0;
+
+  int textos = 0;
+  int fotos = 0;
 
   _cambiarFotoTexto() {
     setState(() {
-      if (y < misTextos.length) {
-        (misFotos[y]);
-        y++;
-        if (y == misTextos.length) y = 0;
+      if (textos < misTextos.length) {
+        (misFotos[textos]);
+        textos++;
+        if (textos == misTextos.length) textos = 0;
       }
 
-      if (i < misFotos.length) {
-        (misFotos[i]);
-        i++;
-        if (i == misFotos.length) i = 0;
+      if (fotos < misFotos.length) {
+        (misFotos[fotos]);
+        fotos++;
+        if (fotos == misFotos.length) fotos = 0;
       }
     });
   }
@@ -49,17 +52,17 @@ class _MiApp1State extends State<MiApp1> {
         title: Text(
           'חנוכה שמח!!',
           textDirection: TextDirection.rtl,
-          style: TextStyle(fontSize: 40),
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.blue,
         centerTitle: true,
       ),
       backgroundColor: Colors.cyan,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            misTextos[y],
+            misTextos[textos],
             style: TextStyle(
               fontSize: 40,
               color: Colors.white,
@@ -68,10 +71,15 @@ class _MiApp1State extends State<MiApp1> {
             textAlign: TextAlign.center,
           ),
           Expanded(
-            child: misFotos[i],
+            child: Container(
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.all(10),
+              child: misFotos[fotos],
+            ),
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: _cambiarFotoTexto,
         tooltip: 'CmbiarFotoTexto',
