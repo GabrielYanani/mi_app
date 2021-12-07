@@ -11,25 +11,12 @@ class MiApp1 extends StatefulWidget {
 }
 
 class _MiApp1State extends State<MiApp1> {
-  Image miFoto = Image.asset('assets/januka.jpg');
-  Image miPrimeraFoto = Image.asset('assets/jaim.jpg');
-  Image miSegundaFoto = Image.asset('assets/tobe.jpg');
-
-  String text1 = 'Asi festejamos en casa!';
-  String text2 = 'Hola! me llamo Jaim';
-
-  List<Image> misFotos = [
-    Image.asset('assets/januka.jpg'),
-    Image.asset('assets/jaim.jpg'),
-    Image.asset('assets/tobe.jpg'),
+  List<String> misTextos = [
+    'Asi festejamos en casa!',
+    'Hola! me llamo Jaim',
   ];
-  get child => null;
-
   void _cambiarFotoTexto() {
-    setState(() {
-      text1 = text2;
-      miFoto = miPrimeraFoto;
-    });
+    setState(() {});
   }
 
   @override
@@ -50,7 +37,8 @@ class _MiApp1State extends State<MiApp1> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'Mis fotos de Januka',
+              misTextos[0],
+              textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -58,44 +46,9 @@ class _MiApp1State extends State<MiApp1> {
                 decorationColor: Colors.blueAccent,
               ),
             ),
-            Expanded(
-              child: ListView(
-                controller: ScrollController(),
-                padding: EdgeInsets.all(20),
-                children: misFotos
-                    .map(
-                      (image) => image,
-                    )
-                    .toList(),
-              ),
-            ),
-            Expanded(child: MiLista()),
+            Expanded(child: miLista()),
           ],
         ),
-        // Column(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: <Widget>[
-        //     Container(
-        //       color: Colors.blue,
-        //     ),
-        //     Text(
-        //       text1,
-        //       style: TextStyle(
-        //         fontSize: 40,
-        //         color: Colors.white,
-        //         fontStyle: FontStyle.italic,
-        //       ),
-        //       textAlign: TextAlign.center,
-        //     ),
-        //      MiLista(),
-        //   ],
-        // ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: _cambiarFotoTexto,
-        //   tooltip: 'CambiarFoto',
-        //   child: const Icon(Icons.photo),
-        //   backgroundColor: Colors.amber,
-        // ),
       ),
     );
   }
