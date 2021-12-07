@@ -46,55 +46,65 @@ class _MiApp1State extends State<MiApp1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'חנוכה שמח!!',
-          textDirection: TextDirection.rtl,
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-      ),
-      backgroundColor: Colors.cyan,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            misTextos[textos],
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.white,
-              fontStyle: FontStyle.italic,
-            ),
-            textAlign: TextAlign.center,
+        appBar: AppBar(
+          title: Text(
+            'חנוכה שמח!!',
+            textDirection: TextDirection.rtl,
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
           ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.all(10),
-              child: misFotos[fotos],
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+        backgroundColor: Colors.cyan,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              misTextos[textos],
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton:Row(children: [FloatingActionButton(
-        onPressed: _cambiarFotoTexto,
-        tooltip: 'CmbiarFotoTexto',
-        child: const Icon(
-          Icons.photo,
-          size: 30,
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                margin: EdgeInsets.all(10),
+                child: misFotos[fotos],
+              ),
+            ),
+          ],
         ),
-        backgroundColor: Colors.amber,
-      ),FloatingActionButton(
-        onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>pagina_1()))},
-        tooltip: 'CmbiarFotoTexto',
-        child: const Icon(
-          Icons.photo,
-          size: 30,
-        ),
-        backgroundColor: Colors.amber,
-      ),],) 
-    );
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: Row(
+          children: [
+            FloatingActionButton(
+              onPressed: _cambiarFotoTexto,
+              tooltip: 'CmbiarFotoTexto',
+              child: const Icon(
+                Icons.photo,
+                size: 30,
+              ),
+              backgroundColor: Colors.amber,
+            ),SizedBox(height: 10,width: 5,),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>MiApp1(),
+                    ),);
+              },
+              tooltip: 'cambio de pagina',
+              child: const Icon(
+                Icons.last_page,
+                size: 30,
+              ),
+              backgroundColor: Colors.blue.shade800,
+            ),
+          ],
+        ));
   }
 }
