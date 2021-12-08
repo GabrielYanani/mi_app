@@ -9,6 +9,7 @@ class miLista extends StatelessWidget {
     Image.asset('assets/januka.jpg'),
     Image.asset('assets/jaim.jpg'),
     Image.asset('assets/tobe.jpg'),
+    Image.asset('assets/ezra.jpg'),
   ];
   @override
   Widget build(BuildContext context) {
