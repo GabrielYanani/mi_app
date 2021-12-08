@@ -70,10 +70,12 @@ class _MiApp1State extends State<MiApp1> {
               textAlign: TextAlign.center,
             ),
             Expanded(
-              child: Container(
-                padding: EdgeInsets.all(5),
-                margin: EdgeInsets.all(10),
-                child: misFotos[fotos],
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.all(10),
+                  child: misFotos[fotos],
+                ),
               ),
             ),
           ],
@@ -81,7 +83,7 @@ class _MiApp1State extends State<MiApp1> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Row(
           children: [
-            FloatingActionButton(
+            FloatingActionButton(heroTag: '1',
               onPressed: _cambiarFotoTexto,
               tooltip: 'CmbiarFotoTexto',
               child: const Icon(
@@ -90,12 +92,12 @@ class _MiApp1State extends State<MiApp1> {
               ),
               backgroundColor: Colors.amber,
             ),SizedBox(height: 10,width: 5,),
-            FloatingActionButton(
+            FloatingActionButton(heroTag: '2',
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>MiApp2(),
+                      builder: (context) =>Pagina1(),
                     ),);
               },
               tooltip: 'cambio de pagina',

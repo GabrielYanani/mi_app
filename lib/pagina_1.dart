@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class MiApp2 extends StatefulWidget {
-  const MiApp2({Key key}) : super(key: key);
+class Pagina1 extends StatefulWidget {
+  const Pagina1({Key key}) : super(key: key);
 
   @override
-  State<MiApp2> createState() => _MiApp2State();
+  State<Pagina1> createState() => _Pagina1State();
 }
 
-class _MiApp2State extends State<MiApp2> {
+class _Pagina1State extends State<Pagina1> {
   List<dynamic> misFotos = [
     Image.asset('assets/januka.jpg'),
     Image.asset('assets/jaim.jpg'),
@@ -26,7 +26,7 @@ class _MiApp2State extends State<MiApp2> {
   int textos = 0;
   int fotos = 0;
 
-  _cambiarFotoTexto() {
+  _cambiarFotoTexto2() {
     setState(() {
       if (textos < misTextos.length) {
         (misFotos[textos]);
@@ -68,17 +68,19 @@ class _MiApp2State extends State<MiApp2> {
             textAlign: TextAlign.center,
           ),
           Expanded(
-            child: Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.all(10),
-              child: misFotos[fotos],
+            child: Center(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                margin: EdgeInsets.all(10),
+                child: misFotos[fotos],
+              ),
             ),
           ),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: _cambiarFotoTexto,
+        onPressed: _cambiarFotoTexto2,
         tooltip: 'CmbiarFotoTexto',
         child: const Icon(Icons.photo),
         backgroundColor: Colors.amber,
