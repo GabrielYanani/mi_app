@@ -58,14 +58,16 @@ class _MiApp1State extends State<MiApp1> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
-            misTextos[y],
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.white,
-              fontStyle: FontStyle.italic,
+          Center(
+            child: Text(
+              misTextos[y],
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.white,
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
           Expanded(
             child: misFotos[i],
