@@ -8,12 +8,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(color: Colors.deepOrangeAccent,
+    debugShowCheckedModeBanner: false,
       home: MiApp1(),
     );
   }
